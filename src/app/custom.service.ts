@@ -8,14 +8,7 @@ import { Observable } from 'rxjs';
 export class CustomService {
 
   constructor(private http: HttpClient) { }
-
-  // public getFast(): Observable<any> {
-  //   return this.http.get<any>('http://localhost:5000/api/fast');
-  // }
-
-  // public getSlow(): Observable<any> {
-  //   return this.http.get<any>('http://localhost:5000/api/slow');
-  // }
+  
 
   public getLaunches(): Observable<any> {
     return this.http.get<any>(`https://api.spaceXdata.com/v3/launches?limit=100`);
