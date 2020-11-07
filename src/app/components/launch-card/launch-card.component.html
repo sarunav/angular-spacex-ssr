@@ -1,0 +1,22 @@
+<div class="launch-card">
+    <img src={{launchData.links.flickr_images[0]}} alt="">
+    <h5>{{launchData.mission_name}} # {{launchData.flight_number}}</h5>
+    <ul>
+        <li>
+            <h6>Mission Ids:</h6>
+            <ul>
+                <li *ngFor="let missionId of launchData.mission_id">{{missionId}}</li>
+            </ul>
+        </li>
+        <li>
+            <h6>Launch Year: {{launchData.launch_year}}</h6>
+        </li>
+        <li>
+            <h6>Successful Launch: {{launchData.launch_success}}</h6>
+        </li>
+        <li>
+            <h6>Successful Landing: {{launchData.rocket.first_stage.cores[0].land_success}}</h6>
+        </li>
+    </ul>
+    
+</div>
