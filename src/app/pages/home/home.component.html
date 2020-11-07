@@ -1,13 +1,13 @@
-<div class="container">
-    <section class="home-page-wrapper">
+<section class="container">
+    <div class="home-page-wrapper">
         <h1>SpaceX Launch Programs</h1>
         <div class="spacex-lauch-details-wrapper">
-            <div class="filter-wrapper">
+            <div class="col-3 filter-wrapper">
                 <app-filters (spacexFilter)="filterDataEmitted($event)"></app-filters>
             </div>
-            <div class="lauch-card-wrapper">
-                <app-launch-card [filterByYear]="" [filterByLaunch]="" [filterByLanding]="" [launchData]="launch" *ngFor="let launch of launchesArray; let i = index"></app-launch-card>
+            <div class="col-9 lauch-card-wrapper">
+                <app-launch-card [launchData]="launch" *ngFor="let launch of launchesArray; let i = index"></app-launch-card>
             </div>
         </div>
-    </section>
-</div>
+    </div>
+</section>

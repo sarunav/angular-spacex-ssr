@@ -1,17 +1,16 @@
 <div class="filter-card">
     <div class="filter-item-wrapper">
-        <h5>Filters</h5>
-        <h6>Launch Year</h6>
+        <h3>Filters</h3>
+        <h4>Launch Year</h4>
         <hr>
         <div class="filter-year-chip-wrapper">
-            <!-- <input (click)="filterLaunchYear(year)" *ngFor="let year of launchYears; let i = index" type="radio" id="male" name="gender" [][value]="year"> -->
             <div [ngClass]="launchYearSelectedIndex === i ? 'active' : ''" (click)="filterLaunchYear(i, year)" *ngFor="let year of launchYears; let i = index" class="filter-year-chip">
                 {{year}}
             </div>
         </div>
     </div>
     <div class="filter-item-wrapper">
-        <h6>Successful Launch</h6>
+        <h4>Successful Launch</h4>
         <hr>
         <div class="filter-year-chip-wrapper">
             <div (click)="filterSuccessfulLaunch(i, launch)" [ngClass]="launchSelectedIndex === i ? 'active' : ''"  *ngFor="let launch of successfulLaunch; let i = index" class="filter-year-chip">
@@ -20,7 +19,7 @@
         </div>
     </div>
     <div class="filter-item-wrapper">
-        <h6>Successful Landing</h6>
+        <h4>Successful Landing</h4>
         <hr>
         <div class="filter-year-chip-wrapper">
             <div (click)="filterSuccessfulLanding(i, landing)" [ngClass]="landingSelectedIndex === i ? 'active' : ''" *ngFor="let landing of successfulLanding; let i = index" class="filter-year-chip">
