@@ -7,6 +7,7 @@ import { CustomService } from 'src/app/custom.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  siteTitle = 'SpaceX Launch Programs';
   launchesArray = [];
   filteredObject: any;
   isLoading = false;

@@ -1,4 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {HttpClientModule} from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { HomeComponent } from './home.component';
 
@@ -8,6 +10,7 @@ describe('HomeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [ HttpClientTestingModule, HttpClientModule ],
       declarations: [ HomeComponent ]
     })
     .compileComponents();
@@ -19,7 +22,12 @@ describe('HomeComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create home page component', () => {
     expect(component).toBeTruthy();
   });
+
+  it(`should have as title 'SpaceX Launch Programs'`, () => {
+    expect(component.siteTitle).toEqual('SpaceX Launch Programs');
+  });
+
 });

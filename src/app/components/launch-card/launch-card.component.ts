@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChange } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-launch-card',
@@ -14,6 +14,8 @@ export class LaunchCardComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(): any {
+    console.log(this.launchData);
+    
   }
 
 }
