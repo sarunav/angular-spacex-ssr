@@ -24,11 +24,11 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 ## Lighthouse Reports:
 
-##Desktop
+### Desktop
 
 Screenshot [link](https://res.cloudinary.com/dfverks5s/image/upload/v1604853456/Desktop_nk8hxj.png)
 
-##Mobile
+### Mobile
 
 Screenshot [link](https://res.cloudinary.com/dfverks5s/image/upload/v1604853456/Desktop_nk8hxj.png)
 
