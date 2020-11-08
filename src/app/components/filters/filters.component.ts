@@ -26,39 +26,39 @@ export class FiltersComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // Click event for successful launch
   filterSuccessfulLaunch(i: number, selected: any): void {
-    console.log('item---', selected);
     this.launchSelectedIndex = i;
     this.launchSuccessSelected = selected.toLowerCase();
     this.emitFilterData = {
       successfulLaunch: this.launchSuccessSelected,
       launchYear: this.launchYearSelected,
       successfulLanding: this.landingSuccessSelected
-    }
+    };
     this.spacexFilter.emit(this.emitFilterData);
   }
 
+  // Click event for launch year
   filterLaunchYear(i: number, selected: any): void {
-    console.log('item---', selected);
     this.launchYearSelectedIndex = i;
     this.launchYearSelected = selected.toLowerCase();
     this.emitFilterData = {
       successfulLaunch: this.launchSuccessSelected,
       launchYear: this.launchYearSelected,
       successfulLanding: this.landingSuccessSelected
-    }
+    };
     this.spacexFilter.emit(this.emitFilterData);
   }
 
+  // Click event for successful landing
   filterSuccessfulLanding(i: number, selected: any): void {
-    console.log('item---', selected);
     this.landingSelectedIndex = i;
     this.landingSuccessSelected = selected.toLowerCase();
     this.emitFilterData = {
       successfulLaunch: this.launchSuccessSelected,
       launchYear: this.launchYearSelected,
       successfulLanding: this.landingSuccessSelected
-    }
+    };
     this.spacexFilter.emit(this.emitFilterData);
   }
 

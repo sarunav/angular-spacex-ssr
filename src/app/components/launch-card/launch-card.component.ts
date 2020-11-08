@@ -14,7 +14,6 @@ export class LaunchCardComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(): any {
-    // console.log('data--', this.launchData);
   }
 
 }

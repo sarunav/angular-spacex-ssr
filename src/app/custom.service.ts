@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class CustomService {
 
   constructor(private http: HttpClient) { }
-  
+
 
   public getLaunches(): Observable<any> {
     return this.http.get<any>(`https://api.spaceXdata.com/v3/launches?limit=100`);

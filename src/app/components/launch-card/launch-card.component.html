@@ -1,25 +1,26 @@
-<div class="launch-card col-2">
-    <img *ngIf="launchData.links.flickr_images && launchData.links.flickr_images.length" src={{launchData.links.flickr_images[0]}} alt={{launchData.mission_name}}>
-    <img *ngIf="launchData.links.flickr_images && !launchData.links.flickr_images.length" src="https://via.placeholder.com/200" alt={{launchData.mission_name}}>
+<div class="launch-card">
+    <div class="launch-card-img-wrapper">
+        <img *ngIf="launchData.links.flickr_images && launchData.links.flickr_images.length" src={{launchData.links.flickr_images[0]}} alt={{launchData.mission_name}}>
+       <img *ngIf="launchData.links.flickr_images && !launchData.links.flickr_images.length" src="https://via.placeholder.com/200" alt={{launchData.mission_name}}>
+    </div>
 
     
     <h5>{{launchData.mission_name}} # {{launchData.flight_number}}</h5>
     <ul>
         <li>
-            <h6>Mission Ids:</h6>
-            <ul>
+            <h6><strong>Mission Ids:</strong> &nbsp;<span *ngIf="launchData.mission_id && !launchData.mission_id.length">NA</span></h6>
+            <ul *ngIf="launchData.mission_id && launchData.mission_id.length">
                 <li *ngFor="let missionId of launchData.mission_id">{{missionId}}</li>
             </ul>
         </li>
         <li>
-            <h6>Launch Year: {{launchData.launch_year}}</h6>
+            <h6><strong>Launch Year:</strong> {{launchData.launch_year}}</h6>
         </li>
         <li>
-            <h6>Successful Launch: {{launchData.launch_success}}</h6>
+            <h6><strong>Successful Launch:</strong> {{launchData.launch_success}}</h6>
         </li>
         <li>
-            <h6>Successful Landing: {{launchData.rocket.first_stage.cores[0].land_success}}</h6>
+            <h6><strong>Successful Landing:</strong> {{launchData.rocket.first_stage.cores[0].land_success ? launchData.rocket.first_stage.cores[0].land_success : 'NA'}}</h6>
         </li>
     </ul>
-    
 </div>

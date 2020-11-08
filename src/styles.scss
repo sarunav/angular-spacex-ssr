@@ -1,5 +1,5 @@
 body {
-    background: gray;
+    background: rgb(242, 242, 242);
     margin: 0 auto;
     font-family: 'Roboto', sans-serif;
 }
@@ -11,55 +11,49 @@ body {
     max-width: 1440px;
 }
 
-.col-1 {width: 100%;}
-    .col-2 {width: auto;}
-    .col-3 {width: 100%;}
-    .col-4 {width: 100%;}
-    .col-5 {width: 100%;}
-    .col-6 {width: 100%;}
-    .col-7 {width: 100%;}
-    .col-8 {width: 100%;}
-    .col-9 {width: 100%;}
-    .col-10 {width: 100%;}
-    .col-11 {width: 100%;}
-    .col-12 {width: 100%;}
+.main-content{
+    @media(min-width: 700px){
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.main-content-left{
+    @media(min-width: 700px){
+        flex-basis: 48%;
+    }
+    @media(min-width: 1025px){
+        flex-basis: 25%;
+    }
+}
+.main-content-right{
+    margin-top: 25px;
+    @media(min-width: 700px){
+        margin-top: 0;
+        flex-basis: 48%;
+    }
+    @media(min-width: 1025px){
+        flex-basis: 73%;
+    }
+}
 
-  @media only screen and (min-width: 1024px) {
-    /* For desktop: */
-    .col-1 {width: 8.33%;}
-    .col-2 {width: 16.66%;}
-    .col-3 {width: 25%;}
-    .col-4 {width: 33.33%;}
-    .col-5 {width: 41.66%;}
-    .col-6 {width: 50%;}
-    .col-7 {width: 58.33%;}
-    .col-8 {width: 66.66%;}
-    .col-9 {width: 75%;}
-    .col-10 {width: 83.33%;}
-    .col-11 {width: 91.66%;}
-    .col-12 {width: 100%;}
-  }
-
- 
-
-@media only screen and (min-width: 768px) { 
-
-} 
-
-
-@media only screen and (min-width: 992px) {}  
-
-@media only screen and (min-width: 1200px) {}  
-
-@media only screen and (min-width: 1400px) {}  
-
-@media only screen and (min-width: 1700px) {} 
-
-
-.home-page-wrapper {
-    .spacex-lauch-details-wrapper {
-        @media only screen and (min-width: 768px) {
-            display: flex;
+.program-card-list{
+    list-style: none outside;
+    margin: 0;
+    padding: 0;
+    @media(min-width: 1025px){
+        display: flex;
+        justify-content: space-between;   
+        flex-wrap: wrap;
+    }
+    > li{
+        background: #fff;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        @media(min-width: 700px){
+            margin-bottom: 30PX;
+        }
+        @media(min-width: 1025px){
+            flex-basis: 23%;
         }
     }
 }

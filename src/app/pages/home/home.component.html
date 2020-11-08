@@ -1,13 +1,19 @@
-<section class="container">
-    <div class="home-page-wrapper">
+<main class="main">
+    <div class="container">
         <h1>SpaceX Launch Programs</h1>
-        <div class="spacex-lauch-details-wrapper">
-            <div class="col-3 filter-wrapper">
+        <div class="main-content">
+            <aside class="main-content-left">
                 <app-filters (spacexFilter)="filterDataEmitted($event)"></app-filters>
-            </div>
-            <div class="col-9 lauch-card-wrapper">
-                <app-launch-card [launchData]="launch" *ngFor="let launch of launchesArray; let i = index"></app-launch-card>
-            </div>
+            </aside>
+            <section class="main-content-right">
+                <p *ngIf="isLoading">Loading....</p>
+                <p *ngIf="!isLoading && launchesArray && !launchesArray.length ">No data available</p>
+                <ul *ngIf="!isLoading" class="program-card-list">
+                    <li *ngFor="let launch of launchesArray; let i = index">
+                        <app-launch-card [launchData]="launch"></app-launch-card>
+                    </li>
+                </ul>
+            </section>
         </div>
     </div>
-</section>
+</main>

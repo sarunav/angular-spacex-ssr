@@ -2,29 +2,26 @@
     <div class="filter-item-wrapper">
         <h3>Filters</h3>
         <h4>Launch Year</h4>
-        <hr>
         <div class="filter-year-chip-wrapper">
-            <div [ngClass]="launchYearSelectedIndex === i ? 'active' : ''" (click)="filterLaunchYear(i, year)" *ngFor="let year of launchYears; let i = index" class="filter-year-chip">
-                {{year}}
-            </div>
+            <ul>
+                <li [ngClass]="launchYearSelectedIndex === i ? 'active' : ''" (click)="filterLaunchYear(i, year)" *ngFor="let year of launchYears; let i = index">{{year}}</li>
+            </ul>
         </div>
     </div>
     <div class="filter-item-wrapper">
         <h4>Successful Launch</h4>
-        <hr>
         <div class="filter-year-chip-wrapper">
-            <div (click)="filterSuccessfulLaunch(i, launch)" [ngClass]="launchSelectedIndex === i ? 'active' : ''"  *ngFor="let launch of successfulLaunch; let i = index" class="filter-year-chip">
-                {{launch}}
-            </div>
+            <ul>
+                <li (click)="filterSuccessfulLaunch(i, launch)" [ngClass]="launchSelectedIndex === i ? 'active' : ''"  *ngFor="let launch of successfulLaunch; let i = index">{{launch}}</li>
+            </ul>
         </div>
     </div>
     <div class="filter-item-wrapper">
         <h4>Successful Landing</h4>
-        <hr>
         <div class="filter-year-chip-wrapper">
-            <div (click)="filterSuccessfulLanding(i, landing)" [ngClass]="landingSelectedIndex === i ? 'active' : ''" *ngFor="let landing of successfulLanding; let i = index" class="filter-year-chip">
-                {{landing}}
-            </div>
+            <ul>
+                <li (click)="filterSuccessfulLanding(i, landing)" [ngClass]="landingSelectedIndex === i ? 'active' : ''" *ngFor="let landing of successfulLanding; let i = index">{{landing}}</li>
+            </ul>
         </div>
     </div>
 </div>

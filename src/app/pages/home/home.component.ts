@@ -9,17 +9,27 @@ import { CustomService } from 'src/app/custom.service';
 export class HomeComponent implements OnInit {
   launchesArray = [];
   filteredObject: any;
+  isLoading = false;
 
   constructor(private service: CustomService) { }
 
   ngOnInit(): void {
+    this.getLaunches();
+  }
+
+  // Get launches on initial app load
+  getLaunches(): void {
+    this.isLoading = true;
     this.service.getLaunches()
     .subscribe((res: any) => {
-      console.log('launches--', res[0]);
+      this.isLoading = false;
       this.launchesArray = res;
+    }, err => {
+      this.isLoading = false;
     });
   }
 
+  // Filter data response object
   filterDataEmitted(filters: any): void {
     this.filteredObject = filters;
     if (this.filteredObject.launchYear !== null &&
@@ -30,35 +40,43 @@ export class HomeComponent implements OnInit {
     } else if (this.filteredObject && this.filteredObject.successfulLaunch && this.filteredObject.successfulLanding) {
       this.getLaunchLandFilterData(this.filteredObject);
     }
-    console.log('emitted---', this.filteredObject);
   }
 
+  // Get all data based on year, launch and landing success
   getAllFilteredData(filterObj): void {
+    this.isLoading = true;
     this.service.getAllLauncheByYear(filterObj)
     .subscribe((res: any) => {
-      console.log('filter-all-res--', res);
+      this.isLoading = false;
       this.launchesArray = res;
     }, err => {
       console.log('filter-err--', err);
+      this.isLoading = false;
     });
   }
 
+  // Get data based on launch success
   getLaunchFilterData(filterObj): void {
+    this.isLoading = true;
     this.service.getLauncheSuccess(filterObj)
     .subscribe((res: any) => {
-      console.log('filter-launch-res--', res);
+      this.isLoading = false;
       this.launchesArray = res;
     }, err => {
+      this.isLoading = false;
       console.log('filter-err--', err);
     });
   }
 
+    // Get data based on landing and launch success
   getLaunchLandFilterData(filterObj): void {
+    this.isLoading = true;
     this.service.getLauncheAndLand(filterObj)
     .subscribe((res: any) => {
-      console.log('filter-launch-land-res--', res);
+      this.isLoading = false;
       this.launchesArray = res;
     }, err => {
+      this.isLoading = false;
       console.log('filter-err--', err);
     });
   }
