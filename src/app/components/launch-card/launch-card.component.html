@@ -1,7 +1,6 @@
 <div class="launch-card">
     <div class="launch-card-img-wrapper">
-        <img *ngIf="launchData.links.flickr_images && launchData.links.flickr_images.length" src={{launchData.links.flickr_images[0]}} alt={{launchData.mission_name}}>
-       <img *ngIf="launchData.links.flickr_images && !launchData.links.flickr_images.length" src="https://via.placeholder.com/200" alt={{launchData.mission_name}}>
+        <img src={{launchData.links.mission_patch_small}} alt={{launchData.mission_name}}>
     </div>
 
     
