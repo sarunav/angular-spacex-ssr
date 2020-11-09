@@ -3,7 +3,7 @@
         <h1>{{siteTitle}}</h1>
         <div class="main-content">
             <aside class="main-content-left">
-                <app-filters (spacexFilter)="filterDataEmitted($event)"></app-filters>
+                <app-filters [launchParams]="routeParams" (spacexFilter)="filterDataEmitted($event)"></app-filters>
             </aside>
             <section class="main-content-right">
                 <p *ngIf="isLoading">Loading....</p>

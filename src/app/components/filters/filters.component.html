@@ -1,6 +1,10 @@
 <div class="filter-card">
     <div class="filter-item-wrapper">
-        <h3>Filters</h3>
+        <div class="clear-filter">
+            <h3>Filters</h3>
+            <a *ngIf="launchSuccessSelected || launchYearSelected || landingSuccessSelected" (click)="clearFilter()">Clear filter</a>
+        </div>
+        
         <h4>Launch Year</h4>
         <div class="filter-year-chip-wrapper">
             <ul>

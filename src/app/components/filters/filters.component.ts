@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-filters',
@@ -7,6 +7,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class FiltersComponent implements OnInit {
   @Output() spacexFilter = new EventEmitter<any>();
+  @Input() launchParams: any;
 
   launchYears = ['2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020'];
 
@@ -32,8 +33,8 @@ export class FiltersComponent implements OnInit {
     this.launchSuccessSelected = selected.toLowerCase();
     this.emitFilterData = {
       successfulLaunch: this.launchSuccessSelected,
-      launchYear: this.launchYearSelected,
-      successfulLanding: this.landingSuccessSelected
+      launchYear: this.launchYearSelected ? this.launchYearSelected : '',
+      successfulLanding: this.landingSuccessSelected ? this.landingSuccessSelected : ''
     };
     this.spacexFilter.emit(this.emitFilterData);
   }
@@ -43,9 +44,9 @@ export class FiltersComponent implements OnInit {
     this.launchYearSelectedIndex = i;
     this.launchYearSelected = selected.toLowerCase();
     this.emitFilterData = {
-      successfulLaunch: this.launchSuccessSelected,
+      successfulLaunch: this.launchSuccessSelected ? this.launchSuccessSelected : '',
       launchYear: this.launchYearSelected,
-      successfulLanding: this.landingSuccessSelected
+      successfulLanding: this.landingSuccessSelected ? this.landingSuccessSelected : ''
     };
     this.spacexFilter.emit(this.emitFilterData);
   }
@@ -55,9 +56,25 @@ export class FiltersComponent implements OnInit {
     this.landingSelectedIndex = i;
     this.landingSuccessSelected = selected.toLowerCase();
     this.emitFilterData = {
-      successfulLaunch: this.launchSuccessSelected,
-      launchYear: this.launchYearSelected,
+      successfulLaunch: this.launchSuccessSelected ? this.launchSuccessSelected : '',
+      launchYear: this.launchYearSelected ? this.launchYearSelected : '',
       successfulLanding: this.landingSuccessSelected
+    };
+    this.spacexFilter.emit(this.emitFilterData);
+  }
+
+  // Clear all filters
+  clearFilter(): void {
+    this.landingSelectedIndex = null;
+    this.launchYearSelectedIndex = null;
+    this.launchSelectedIndex = null;
+    this.landingSuccessSelected = '';
+    this.launchYearSelected = '';
+    this.launchSuccessSelected = '';
+    this.emitFilterData = {
+      successfulLaunch: '',
+      launchYear: '',
+      successfulLanding: ''
     };
     this.spacexFilter.emit(this.emitFilterData);
   }

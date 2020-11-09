@@ -19,7 +19,7 @@ body {
 }
 .main-content-left{
     @media(min-width: 700px){
-        flex-basis: 48%;
+        flex-basis: 35%;
     }
     @media(min-width: 1025px){
         flex-basis: 25%;
@@ -29,7 +29,7 @@ body {
     margin-top: 25px;
     @media(min-width: 700px){
         margin-top: 0;
-        flex-basis: 48%;
+        flex-basis: 61%;
     }
     @media(min-width: 1025px){
         flex-basis: 73%;
@@ -40,7 +40,7 @@ body {
     list-style: none outside;
     margin: 0;
     padding: 0;
-    @media(min-width: 1025px){
+    @media(min-width: 700px){
         display: flex;
         justify-content: space-between;   
         flex-wrap: wrap;
@@ -51,6 +51,7 @@ body {
         margin-bottom: 20px;
         @media(min-width: 700px){
             margin-bottom: 30PX;
+            flex-basis: 47%;
         }
         @media(min-width: 1025px){
             flex-basis: 23%;

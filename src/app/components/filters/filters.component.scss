@@ -4,6 +4,16 @@
     border-radius: 5px;
     .filter-item-wrapper {
         margin-bottom: 30px;
+        .clear-filter {
+            display: flex;
+            justify-content: space-between;
+            a {
+                margin: 19px 0;
+                color: #454b9a;
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
         h3 {
             letter-spacing: 1px;
         }
