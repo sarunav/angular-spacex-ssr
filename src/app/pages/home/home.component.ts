@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { CustomService } from 'src/app/custom.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class HomeComponent implements OnInit {
   filteredObject: any;
   isLoading = false;
 
-  constructor(private service: CustomService) { }
+  constructor(private service: CustomService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.getLaunches();
@@ -30,7 +31,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  // Filter data response object
+  // Filter data with selected filters
   filterDataEmitted(filters: any): void {
     this.filteredObject = filters;
     if (this.filteredObject.launchYear !== null &&
@@ -44,7 +45,9 @@ export class HomeComponent implements OnInit {
   }
 
   // Get all data based on year, launch and landing success
-  getAllFilteredData(filterObj): void {
+  getAllFilteredData(filterObj: any): void {
+    this.router.navigate(['/programs'], { queryParams: { launch_success: filterObj.successfulLaunch,
+      landing_success: filterObj.successfulLanding, year: filterObj.launchYear }});
     this.isLoading = true;
     this.service.getAllLauncheByYear(filterObj)
     .subscribe((res: any) => {
@@ -57,7 +60,8 @@ export class HomeComponent implements OnInit {
   }
 
   // Get data based on launch success
-  getLaunchFilterData(filterObj): void {
+  getLaunchFilterData(filterObj: any): void {
+    this.router.navigate(['/programs'], { queryParams: { launch_success: filterObj }});
     this.isLoading = true;
     this.service.getLauncheSuccess(filterObj)
     .subscribe((res: any) => {
@@ -70,7 +74,9 @@ export class HomeComponent implements OnInit {
   }
 
     // Get data based on landing and launch success
-  getLaunchLandFilterData(filterObj): void {
+  getLaunchLandFilterData(filterObj: any): void {
+    this.router.navigate(['/programs'], { queryParams: { launch_success: filterObj.successfulLaunch,
+      landing_success: filterObj.successfulLanding }});
     this.isLoading = true;
     this.service.getLauncheAndLand(filterObj)
     .subscribe((res: any) => {
