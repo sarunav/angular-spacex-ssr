@@ -14,9 +14,14 @@ Run `npm run dev:ssr` for a dev server. Navigate to `http://localhost:4200/`
 
 Run `ng build` or `npm run build:ssr` to build the project. The build artifacts will be stored in the `dist/spacex/browser` directory.
 
+## Lint error check
+
+Run `npm run lint` to check for any lint errors.
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
 
 ## Running end-to-end tests
 
