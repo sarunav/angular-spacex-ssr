@@ -4,7 +4,7 @@ Web application to filter SpaceX launch programs. This application is using angu
 
 ## DEMO Link
 
-[SpaceX](https://5fa8093dbf5e7c000790a25d--jovial-kalam-04e79e.netlify.app/#/)
+[SpaceX](https://jovial-kalam-04e79e.netlify.app/#/programs)
 
 ## Development server
 
