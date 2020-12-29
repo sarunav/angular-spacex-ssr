@@ -4,7 +4,7 @@
             <h3>Filters</h3>
             <a *ngIf="launchSuccessSelected || launchYearSelected || landingSuccessSelected" (click)="clearFilter()">Clear filter</a>
         </div>
-        
+
         <h4>Launch Year</h4>
         <div class="filter-year-chip-wrapper">
             <ul>
@@ -16,7 +16,7 @@
         <h4>Successful Launch</h4>
         <div class="filter-year-chip-wrapper">
             <ul>
-                <li (click)="filterSuccessfulLaunch(i, launch)" [ngClass]="launchSelectedIndex === i ? 'active' : ''"  *ngFor="let launch of successfulLaunch; let i = index">{{launch}}</li>
+                <li (click)="filterSuccessfulLaunch(i, launch)" [ngClass]="launchSelectedIndex === i ? 'active' : ''" *ngFor="let launch of successfulLaunch; let i = index">{{launch}}</li>
             </ul>
         </div>
     </div>
